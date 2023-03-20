@@ -1,0 +1,22 @@
+{
+  "stuttgart": {
+    "url": "https://www.ebay-kleinanzeigen.de/s-wohnung-mieten/stuttgart/anzeige:angebote/seite:%s/c203l9280",
+    "listings_path": "cities/listings_stuttgart.json",
+    "hash_path": "CityRentalsPipeline/cities/hash_stuttgart.json"
+  },
+  "muenchen": {
+    "url": "https://www.ebay-kleinanzeigen.de/s-wohnung-mieten/muenchen/anzeige:angebote/seite:%s/c203l6411",
+    "listings_path": "cities/listings_muenchen.json",
+    "hash_path": "CityRentalsPipeline/cities/hash_muenchen.json"
+  },
+  "koeln": {
+    "url": "https://www.ebay-kleinanzeigen.de/s-wohnung-mieten/koeln/anzeige:angebote/seite:%s/c203l945",
+    "listings_path": "cities/listings_koeln.json",
+    "hash_path": "CityRentalsPipeline/cities/hash_koeln.json"
+  },
+  "frankfurt-am-main": {
+    "url": "https://www.ebay-kleinanzeigen.de/s-wohnung-mieten/frankfurt-am-main/anzeige:angebote/seite:%s/c203l4292",
+    "listings_path": "cities/listings_frankfurt-am-main.json",
+    "hash_path": "CityRentalsPipeline/cities/hash_frankfurt-am-main.json"
+  }
+}

@@ -1,0 +1,306 @@
+[
+    {
+        "plz": "80995",
+        "boroughs": "Allach-Untermenzing;Feldmoching-Hasenbergl;Moosach"
+    },
+    {
+        "plz": "80997",
+        "boroughs": "Allach-Untermenzing;Moosach;Pasing-Obermenzing"
+    },
+    {
+        "plz": "80999",
+        "boroughs": "Allach-Untermenzing"
+    },
+    {
+        "plz": "81247",
+        "boroughs": "Allach-Untermenzing;Pasing-Obermenzing"
+    },
+    {
+        "plz": "81249",
+        "boroughs": "Allach-Untermenzing;Aubing-Lochhausen-Langwied;Pasing-Obermenzing"
+    },
+    {
+        "plz": "80331",
+        "boroughs": "Altstadt-Lehel;Ludwigsvorstadt-Isarvorstadt"
+    },
+    {
+        "plz": "80333",
+        "boroughs": "Altstadt-Lehel;Maxvorstadt"
+    },
+    {
+        "plz": "80335",
+        "boroughs": "Altstadt-Lehel;Ludwigsvorstadt-Isarvorstadt;Maxvorstadt;Neuhausen-Nymphenburg;Schwanthalerh\u00f6he"
+    },
+    {
+        "plz": "80336",
+        "boroughs": "Altstadt-Lehel;Ludwigsvorstadt-Isarvorstadt;Sendling"
+    },
+    {
+        "plz": "80469",
+        "boroughs": "Altstadt-Lehel;Ludwigsvorstadt-Isarvorstadt"
+    },
+    {
+        "plz": "80538",
+        "boroughs": "Altstadt-Lehel;Ludwigsvorstadt-Isarvorstadt;Schwabing-Freimann"
+    },
+    {
+        "plz": "80539",
+        "boroughs": "Altstadt-Lehel;Maxvorstadt;Schwabing-Freimann"
+    },
+    {
+        "plz": "81541",
+        "boroughs": "Au-Haidhausen;Obergiesing-Fasangarten;Ramersdorf-Perlach"
+    },
+    {
+        "plz": "81543",
+        "boroughs": "Au-Haidhausen;Untergiesing-Harlaching"
+    },
+    {
+        "plz": "81667",
+        "boroughs": "Au-Haidhausen"
+    },
+    {
+        "plz": "81669",
+        "boroughs": "Au-Haidhausen;Ramersdorf-Perlach"
+    },
+    {
+        "plz": "81671",
+        "boroughs": "Au-Haidhausen;Berg am Laim;Ramersdorf-Perlach"
+    },
+    {
+        "plz": "81675",
+        "boroughs": "Au-Haidhausen;Bogenhausen"
+    },
+    {
+        "plz": "81677",
+        "boroughs": "Au-Haidhausen;Berg am Laim;Bogenhausen"
+    },
+    {
+        "plz": "81241",
+        "boroughs": "Aubing-Lochhausen-Langwied;Pasing-Obermenzing"
+    },
+    {
+        "plz": "81243",
+        "boroughs": "Aubing-Lochhausen-Langwied;Pasing-Obermenzing"
+    },
+    {
+        "plz": "81245",
+        "boroughs": "Aubing-Lochhausen-Langwied;Pasing-Obermenzing"
+    },
+    {
+        "plz": "81248",
+        "boroughs": "Aubing-Lochhausen-Langwied"
+    },
+    {
+        "plz": "81673",
+        "boroughs": "Berg am Laim"
+    },
+    {
+        "plz": "81735",
+        "boroughs": "Berg am Laim;Ramersdorf-Perlach;Trudering-Riem"
+    },
+    {
+        "plz": "81825",
+        "boroughs": "Berg am Laim;Trudering-Riem"
+    },
+    {
+        "plz": "81829",
+        "boroughs": "Berg am Laim;Trudering-Riem"
+    },
+    {
+        "plz": "81679",
+        "boroughs": "Bogenhausen"
+    },
+    {
+        "plz": "81925",
+        "boroughs": "Bogenhausen"
+    },
+    {
+        "plz": "81927",
+        "boroughs": "Bogenhausen"
+    },
+    {
+        "plz": "81929",
+        "boroughs": "Bogenhausen"
+    },
+    {
+        "plz": "80933",
+        "boroughs": "Feldmoching-Hasenbergl;Milbertshofen-Am Hart"
+    },
+    {
+        "plz": "80935",
+        "boroughs": "Feldmoching-Hasenbergl;Milbertshofen-Am Hart"
+    },
+    {
+        "plz": "80689",
+        "boroughs": "Hadern;Laim;Pasing-Obermenzing"
+    },
+    {
+        "plz": "81375",
+        "boroughs": "Hadern"
+    },
+    {
+        "plz": "81377",
+        "boroughs": "Hadern;Sendling-Westpark"
+    },
+    {
+        "plz": "80639",
+        "boroughs": "Laim;Neuhausen-Nymphenburg"
+    },
+    {
+        "plz": "80686",
+        "boroughs": "Laim;Sendling-Westpark"
+    },
+    {
+        "plz": "80687",
+        "boroughs": "Laim;Pasing-Obermenzing"
+    },
+    {
+        "plz": "80337",
+        "boroughs": "Ludwigsvorstadt-Isarvorstadt;Sendling"
+    },
+    {
+        "plz": "80339",
+        "boroughs": "Ludwigsvorstadt-Isarvorstadt;Schwanthalerh\u00f6he"
+    },
+    {
+        "plz": "80636",
+        "boroughs": "Maxvorstadt;Neuhausen-Nymphenburg"
+    },
+    {
+        "plz": "80797",
+        "boroughs": "Maxvorstadt;Milbertshofen-Am Hart;Neuhausen-Nymphenburg;Schwabing-West"
+    },
+    {
+        "plz": "80798",
+        "boroughs": "Maxvorstadt;Schwabing-West"
+    },
+    {
+        "plz": "80799",
+        "boroughs": "Maxvorstadt;Schwabing-Freimann;Schwabing-West"
+    },
+    {
+        "plz": "80802",
+        "boroughs": "Maxvorstadt;Schwabing-Freimann"
+    },
+    {
+        "plz": "80807",
+        "boroughs": "Milbertshofen-Am Hart;Schwabing-Freimann"
+    },
+    {
+        "plz": "80809",
+        "boroughs": "Milbertshofen-Am Hart;Neuhausen-Nymphenburg;Schwabing-West"
+    },
+    {
+        "plz": "80937",
+        "boroughs": "Milbertshofen-Am Hart"
+    },
+    {
+        "plz": "80939",
+        "boroughs": "Milbertshofen-Am Hart;Schwabing-Freimann"
+    },
+    {
+        "plz": "80637",
+        "boroughs": "Moosach;Neuhausen-Nymphenburg"
+    },
+    {
+        "plz": "80638",
+        "boroughs": "Moosach;Neuhausen-Nymphenburg"
+    },
+    {
+        "plz": "80992",
+        "boroughs": "Moosach;Neuhausen-Nymphenburg;Pasing-Obermenzing"
+    },
+    {
+        "plz": "80993",
+        "boroughs": "Moosach"
+    },
+    {
+        "plz": "80634",
+        "boroughs": "Neuhausen-Nymphenburg"
+    },
+    {
+        "plz": "81539",
+        "boroughs": "Obergiesing-Fasangarten;Ramersdorf-Perlach;Untergiesing-Harlaching"
+    },
+    {
+        "plz": "81547",
+        "boroughs": "Obergiesing-Fasangarten;Untergiesing-Harlaching"
+    },
+    {
+        "plz": "81549",
+        "boroughs": "Obergiesing-Fasangarten;Ramersdorf-Perlach;Untergiesing-Harlaching"
+    },
+    {
+        "plz": "81737",
+        "boroughs": "Ramersdorf-Perlach"
+    },
+    {
+        "plz": "81739",
+        "boroughs": "Ramersdorf-Perlach"
+    },
+    {
+        "plz": "81827",
+        "boroughs": "Ramersdorf-Perlach;Trudering-Riem"
+    },
+    {
+        "plz": "80801",
+        "boroughs": "Schwabing-Freimann;Schwabing-West"
+    },
+    {
+        "plz": "80803",
+        "boroughs": "Schwabing-Freimann;Schwabing-West"
+    },
+    {
+        "plz": "80804",
+        "boroughs": "Schwabing-Freimann;Schwabing-West"
+    },
+    {
+        "plz": "80805",
+        "boroughs": "Schwabing-Freimann"
+    },
+    {
+        "plz": "80796",
+        "boroughs": "Schwabing-West"
+    },
+    {
+        "plz": "81369",
+        "boroughs": "Sendling;Sendling-Westpark;Thalkirchen-Obersendling"
+    },
+    {
+        "plz": "81371",
+        "boroughs": "Sendling;Thalkirchen-Obersendling"
+    },
+    {
+        "plz": "81373",
+        "boroughs": "Sendling;Sendling-Westpark"
+    },
+    {
+        "plz": "81379",
+        "boroughs": "Sendling;Sendling-Westpark;Thalkirchen-Obersendling"
+    },
+    {
+        "plz": "81475",
+        "boroughs": "Thalkirchen-Obersendling"
+    },
+    {
+        "plz": "81476",
+        "boroughs": "Thalkirchen-Obersendling"
+    },
+    {
+        "plz": "81477",
+        "boroughs": "Thalkirchen-Obersendling"
+    },
+    {
+        "plz": "81479",
+        "boroughs": "Thalkirchen-Obersendling"
+    },
+    {
+        "plz": "85540",
+        "boroughs": "Trudering-Riem"
+    },
+    {
+        "plz": "81545",
+        "boroughs": "Untergiesing-Harlaching"
+    }
+]
