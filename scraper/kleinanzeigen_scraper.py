@@ -4,7 +4,7 @@ from requests.exceptions import HTTPError
 from bs4 import BeautifulSoup
 from datetime import date, datetime, timedelta
 from hashlib import pbkdf2_hmac
-from prefect import task
+from prefect import task, flow
 
 
 @task(log_prints=True)
@@ -113,7 +113,7 @@ def clean_rent_data(posting):
     return current_hash, posting_entry
 
 
-@task(log_prints=True)
+@flow(log_prints=True)
 def convert_rent_data_page_to_dictionary(page_strings):
     """
     Identifies the individual listings containing rental data and returns a list of dictionaries containing all
