@@ -4,12 +4,11 @@ from requests.exceptions import HTTPError
 from bs4 import BeautifulSoup
 from datetime import date, datetime, timedelta
 from hashlib import pbkdf2_hmac
-from prefect import Task
+from prefect import task
 
 
 class KleinanzeigenScraper:
 
-    #@Task(log_prints=True)
     def get_rent_data_pages(self, base_url):
         """
         Uses the requests library to get the ebay-kleinanzeigen pages that contain the apartment rental data for a
@@ -57,7 +56,6 @@ class KleinanzeigenScraper:
         # for bigger cities in germany realistic filters, may not apply to smaller cities
         return "such" not in title.lower() and not qm_price > 40 and not qm_price < 5
 
-    #@Task(log_prints=True)
     def clean_rent_data(self, posting):
         """
         Cleans certain aspects of an apartment rental listings and creates a dictionary for each listing
@@ -112,7 +110,6 @@ class KleinanzeigenScraper:
 
         return current_hash, posting_entry
 
-    #@Task(log_prints=True)
     def convert_rent_data_page_to_dictionary(self, page_strings):
         """
         Identifies the individual listings containing rental data and returns a list of dictionaries containing all
