@@ -1,5 +1,5 @@
 import scraper.kleinanzeigen_scraper as ks
-from local_file_management.local_file_manager import LocalFileManager
+from local_file_management import local_file_manager as lfm
 from local_file_management.configuration_manager import ConfigurationManager
 from prefect import flow
 
@@ -25,7 +25,7 @@ def kleinanzeigen_to_local(city_name):
     cm = ConfigurationManager()
     print(f"Starting to request apartment rental data from ebay-kleinanzeigen for city: {city_name}")
     scraped_postings_list = ks.request_data_for_specified_city(city_name, cm.get_city_configuration(city_name))
-    local_file_manager = LocalFileManager(city_name)
+    local_file_manager = lfm
     local_file_manager.add_new_listings_to_local_json_files(scraped_postings_list, cm.get_listings_path(city_name))
     local_file_manager.add_new_listings_to_local_parquet_files(scraped_postings_list,
                                                                cm.get_listings_parquet_path_for_current_month(
