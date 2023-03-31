@@ -59,17 +59,21 @@ def add_new_listings_to_local_parquet_files(all_postings_list, city_parquet_file
     :return: None
     """
     # One parquetfile per month
+    print(city_parquet_file_path)
     rental_df = pd.DataFrame(all_postings_list)
     rental_df = rental_df.astype(rental_entry_schema)
     if not os.path.exists(city_parquet_file_path):
-        rental_df.to_parquet(f'{city_parquet_file_path}')
+        print("Creating a new parquet file for this month")
+        print(os.path.abspath(__file__))
+        rental_df.to_parquet(f'{city_parquet_file_path}', compression='gzip')
     else:
+        print("There already exists a parquet file for this month. Appending new listings")
         existing_df = pd.read_parquet(f'{city_parquet_file_path}')
-        merged = existing_df.merge(rental_df, on="hash", how='outer', indicator=True)
+        merged = existing_df.merge(rental_df)
         # Creates a dataframe with the new rows
         try:
             combined_dataframe = merged.drop_duplicates(subset=["hash"])
-            combined_dataframe.to_parquet(f'{city_parquet_file_path}')
+            combined_dataframe.to_parquet(f'{city_parquet_file_path}', compression='gzip')
         except KeyError as ke:
             print("No new listings!")
             return
