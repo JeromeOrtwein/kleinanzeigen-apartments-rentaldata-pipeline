@@ -14,6 +14,7 @@ The pipeline consists of the following steps:
       4. Save data locally (backup)
    2. (Ingestion of data into Google Cloud Storage)
       1. Copy one File per day per city with new data
+      2. As there is not much new data every day -> One File per month that gets updated daily
 2. dbt triggers daily (but later)
    1. Ingestion of data into Google Big Query
       1. Raw Cleaned Data
