@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "rental-data-pipeline",
+  "private_key_id": "95c6651062c34fc54f23c1a073361c27c55afaa3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCxfyA0GIfMYfsu\nQU66/maQTulJy6LAgBHauiurygPiVW2e3fbgP7lZ4cve3syqDHUdF7T/0Z0eJG1C\n2xcg3cRHYFhobe1DQLiQjTWAdoDpM8Oa4ru0roavN10OGIkX3CSPJ9SXUIJ1RAV8\noMGZGeZvaOr/JA1fMefXFvs6cReWxBnWTUQAaPSOvX+Xy2Q2bzrv4JtR/+itw/z0\nSshpH7zbbHOxUkYiunq7mlr/zuEXnsYSylnGPLK5IWUfMBOPKf4vUFkAFZau93du\nfpOMmXoysfhsJfVH6NMCzxOzRj8m33Rn+8SIJfGyD9tTdgUKOOIX20Q1w3YLFKnb\nQ3m3HFGBAgMBAAECggEAD/9b9O4QET70f1kCAk8LCe8ezhilMNHqKgtVA8z3mCbo\ndCTfyxrbNwtnj00H57yrMoXQOa1YCp8wXNH3ze3G8sLvfOwJciILcHXVsGAd4sbY\nVqWgUtrXB0RHZg2Wj5i3D9MAcWnfdDe/AdpQUJ75uqlbYscKUH3kPinTV1NZk6wu\n/oERJiG6t3vZFLYUrXrNMcd1opKuB+cqza5id8WI3sRMSLmYFol9v1H4ysXrM/Sb\nQQW/1tbi8eXFaQK5hccu6CoZG6coKbKBTl5v9Y6u1mozJJK7+EUMnxRtiFNXpY+H\nmbFew1CmKkBm++0M2O47XiwcBOW6etO8x7/v07o50QKBgQDkeNZRKLsIUgF7CrCs\ns19hVAncaUfGT5Iu46uWyp7e6230Zb/fsov6oK9U6qciGXJzmZHZ55QG3I96Gfaw\nEgsWi9UjaKj1Cj1IElYqCAdlIq/8EL+AG6BCelDZx3WXN6GVn/noncRq8u7aP79q\ncZ+3dHkpCFxYgbJGzrMFdGZbCQKBgQDG4fbGJmxNKJFNnARpikz2i7LiqdGldTBV\nUJK0k2W4Dk2n78AAj6/C3j44qTJHXk9gFm0sun4TxLOqsPcC+Eutmg34Io6FSJmt\n/qxY6zR7lGOQV1/5+mipqjhxjx2eXxLTjq4jcMsw1DB6MBxKOPFk9Og/K89lt6mM\nBFpME7pIuQKBgGt3t3/ng8qPIGkrBx3FJelXKWhHEV7j0ORDbVP5rS84WLksH0vu\n5U8XxEFSOxmcFKzxoJx6BLQRjV+m1NXPNu39Cl2kfkz86wR6s5MDwc69uT/89Mci\nt4htlphJ7TMbFOOXo2rawyh3awi4EabVGYamv9MgPqfXIe+SjLzVGsxZAoGBAK80\nBPdOhf37DPY3yVNIeMCBFNfFDmEaObgOwQ6/As8AGr0k4hocepPKwTmdJCPnGznk\nx8ythb/YewaV2yUMo26N1lyP5MnZyTiUsDOtEJEFiihwMKbBSE6fHBY+I7OOwcEJ\nYrLp/LZJV2Ns2p8wRsfPUIHGEHDlOUGV3A5FGshRAoGAeLqKQaRj2IbRlJbZciue\npER89ePAewCUAvnOv6ejAgChIDofxAVNoqYcMhfzUJEi+Z1Lc75vgmpQlFEISnpn\nlmjSNXvOFrn4AmkoYbUCTRla1KQX/L1Rib7zNRdSVc4BkHtTCXTu/5S0E5oHczpE\nZKHSNmUZleviW63OzyZO4cM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "rental-data-gcs-service@rental-data-pipeline.iam.gserviceaccount.com",
+  "client_id": "112574452993383677348",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rental-data-gcs-service%40rental-data-pipeline.iam.gserviceaccount.com"
+}
+

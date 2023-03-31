@@ -1,5 +1,6 @@
 import scraper.kleinanzeigen_scraper as ks
 from local_file_management import local_file_manager as lfm
+from gcs_file_management import gcs_file_manager as gfm
 from local_file_management.configuration_manager import ConfigurationManager
 from prefect import flow
 
@@ -31,14 +32,17 @@ def kleinanzeigen_to_local(city_name):
                                                                cm.get_listings_parquet_path_for_current_month(
                                                                    city_name))
 
+@flow(log_prints=True)
+def local_to_gcs(city_name):
+    cm = ConfigurationManager()
+    local_parquet_path = cm.get_listings_parquet_path_for_current_month(city_name)
+    gcs_path = cm.get_gcs_path_for_city(city_name)
+    gfm.copy_local_parquet_file_for_current_month(local_parquet_path, gcs_path)
 
 @flow(log_prints=True)
 def kleinanzeigen_to_local_to_gcs(city_name):
     kleinanzeigen_to_local(city_name)
-    # Seems like they block to many requests in a short time
-    # print(f"waiting for {waiting_seconds} seconds! To not spam servers!")
-    # duplicateRemover.remove_duplicates_from_listings(city_data)
-
+    local_to_gcs(city_name)
 
 @flow(log_prints=True)
 def kleinanzeigen_main_flow(city_name):
