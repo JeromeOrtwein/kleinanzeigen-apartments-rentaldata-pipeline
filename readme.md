@@ -32,3 +32,7 @@ This pipeline was built as a project for the data engineering zoomcamp by DataTa
 [Zoomcamp Github](https://github.com/DataTalksClub/data-engineering-zoomcamp)
 
 
+SETUP:
+1. env: DATASET_NAME : <big_query_dataset>
+
+

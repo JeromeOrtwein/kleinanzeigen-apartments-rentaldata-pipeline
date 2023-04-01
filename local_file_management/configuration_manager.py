@@ -65,3 +65,11 @@ class ConfigurationManager:
         listings_dir = Path(listings_path).parent / (city_name + year_month)
         listings_dir_string = listings_dir.as_posix() + ".parquet"
         return listings_dir_string
+
+    def get_bq_dataset_name(self):
+        """
+        Returns the name of the dataset where the rental data for the individual city tables is stored.
+
+        :return: name of the dataset
+        """
+        return os.getenv('DATASET_NAME')

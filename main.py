@@ -1,7 +1,7 @@
 import scraper.kleinanzeigen_scraper as ks
 from local_file_management import local_file_manager as lfm
 from gcs_file_management import gcs_file_manager as gfm
-from big_query_management import bq_manager as bqm
+from big_query_management import big_query_manager as bqm
 from local_file_management.configuration_manager import ConfigurationManager
 from prefect import flow
 
@@ -30,9 +30,10 @@ def kleinanzeigen_to_local(city_name):
     local_file_manager = lfm
     local_file_manager.add_new_listings_to_local_json_files(scraped_postings_list, cm.get_listings_path(city_name))
     df = local_file_manager.add_new_listings_to_local_parquet_files(scraped_postings_list,
-                                                               cm.get_listings_parquet_path_for_current_month(
-                                                                   city_name))
+                                                                    cm.get_listings_parquet_path_for_current_month(
+                                                                        city_name))
     return df
+
 
 @flow(log_prints=True)
 def local_to_gcs(city_name):
@@ -41,17 +42,25 @@ def local_to_gcs(city_name):
     gcs_path = cm.get_gcs_path_for_city(city_name)
     gfm.copy_local_parquet_file_for_current_month(local_parquet_path, gcs_path)
 
+
 @flow(log_prints=True)
-def new_rows_to_bq(city_name, new_rows_df):
+def new_rows_to_bq(city_name, dataset_name, new_rows_df):
+    bqm.update_data_for_current_listings(dataset_name, city_name, new_rows_df)
+
+
+@flow(log_prints=True)
+def kleinanzeigen_to_local_to_gcs_to_bq(city_name):
     cm = ConfigurationManager()
-    bqm.update_data_for_current_listings(new_rows_df)
-
-
-@flow(log_prints=True)
-def kleinanzeigen_to_local_to_gcs(city_name):
+    dataset_name = cm.get_bq_dataset_name()
     current_listings_df = kleinanzeigen_to_local(city_name)
     local_to_gcs(city_name)
-    new_rows_to_bq(city_name, current_listings_df)
+    if not bqm.check_if_table_exists(dataset_name, city_name):
+        bqm.create_big_query_table(dataset_name, city_name)
+        if not bqm.check_if_table_exists(dataset_name, city_name):
+            print("table could not get created successfully!")
+            return
+    new_rows_to_bq(city_name, dataset_name, current_listings_df)
+
 
 @flow(log_prints=True)
 def kleinanzeigen_main_flow(city_name):
