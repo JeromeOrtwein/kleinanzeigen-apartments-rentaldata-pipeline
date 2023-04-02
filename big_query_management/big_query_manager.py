@@ -33,7 +33,7 @@ WHERE table_name = '{}'
 """
 
 sql_check_hash_in_table = """
-SELECT hash_code
+SELECT COUNT(hash_code)
 FROM (
     SELECT "{}" AS hash_code
 )
@@ -44,7 +44,7 @@ WHERE hash_code NOT IN (
 
 
 @task(log_prints=True)
-def update_data_for_current_listings(df, dataset_name, city_name):
+def update_data_for_current_listings(dataset_name, city_name, df):
     """Write DataFrame to BigQuery"""
     bigquery_warehouse = BigQueryWarehouse.load("big-query-block")
     hash_column = df.loc[:, "hash_code"]
@@ -52,11 +52,11 @@ def update_data_for_current_listings(df, dataset_name, city_name):
     # Maybe it's faster to bundle those requests, but it seems to be more costly to unionize them in bigquery
     # Maybe generating a temporary table is the way
     # for now iterating must suffice as the dataframe should not get to big max 100 pages * 30 listings = 3000 rows
-    for hash in hash_column:
-        result = bigquery_warehouse.fetch_one(sql_check_hash_in_table.format(hash, dataset_name, city_name))
-        if len(result) > 0:
-            continue
-        list_of_new_hashes.append(hash)
+    print(df)
+    for hash_value in hash_column:
+        result = bigquery_warehouse.fetch_one(sql_check_hash_in_table.format(hash_value, dataset_name, city_name))
+        if result and int(result[0]) > 0:
+            list_of_new_hashes.append(hash_value)
 
     if len(list_of_new_hashes) == 0:
         print(f"No new listings found to append to big query for city {city_name}!")
@@ -66,7 +66,7 @@ def update_data_for_current_listings(df, dataset_name, city_name):
     new_listings = df[df["hash_code"].isin(list_of_new_hashes)]
     print(f'There are {len(new_listings)} new listings for city {city_name}')
     gcp_credentials_block = GcpCredentials.load("gcp-rental-data-credentials")
-    new_listings.to_gbq(destination_table=city_name,
+    new_listings.to_gbq(destination_table=f'{dataset_name}.{city_name}',
                         project_id=gcp_credentials_block.project,
                         credentials=gcp_credentials_block.get_credentials_from_service_account(),
                         if_exists="append")
