@@ -100,7 +100,7 @@ def clean_rent_data(posting):
 
     posting_entry = {}
     if filter_accept(posting_ellipsis, posting_price, price_per_qm):
-        posting_entry = {"hash": str(current_hash),
+        posting_entry = {"hash_code": str(current_hash),
                          "post_code": plz,
                          "borough": borough,
                          "title": posting_ellipsis,

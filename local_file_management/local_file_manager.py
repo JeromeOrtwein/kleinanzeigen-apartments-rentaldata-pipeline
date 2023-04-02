@@ -4,7 +4,7 @@ import os.path
 import pyarrow.parquet as pq
 from prefect import task
 
-rental_entry_schema = {"hash": str,
+rental_entry_schema = {"hash_code": str,
                        "post_code": str,
                        "borough": str,
                        "title": str,
@@ -27,16 +27,16 @@ def add_new_listings_to_local_json_files(all_postings_list, city_json_file):
         with open(city_json_file, 'r') as all_listings_file:
             all_listings_in_file = json.load(all_listings_file)
 
-        all_hashes_in_listings = [listing["hash"] for listing in all_listings_in_file]
+        all_hashes_in_listings = [listing["hash_code"] for listing in all_listings_in_file]
         # with open(hash_file, 'r') as all_listings_file_hashes:
         # all_hashes_in_file = json.load(all_listings_file_hashes)
 
         hashes_in_this_run = []
         new_listings_in_this_run = []
         for idx, posting in enumerate(all_postings_list):
-            if posting["hash"] in all_hashes_in_listings or posting["hash"] in hashes_in_this_run:
+            if posting["hash_code"] in all_hashes_in_listings or posting["hash_code"] in hashes_in_this_run:
                 continue
-            hashes_in_this_run.append(posting["hash"])
+            hashes_in_this_run.append(posting["hash_code"])
             all_listings_in_file.append(posting)
             new_listings_in_this_run.append(posting)
 
@@ -72,8 +72,8 @@ def add_new_listings_to_local_parquet_files(all_postings_list, city_parquet_file
         merged = existing_df.merge(rental_df)
         # Creates a dataframe with the new rows
         try:
-            combined_dataframe = merged.drop_duplicates(subset=["hash"])
+            combined_dataframe = merged.drop_duplicates(subset=["hash_code"])
             combined_dataframe.to_parquet(f'{city_parquet_file_path}', compression='gzip')
         except KeyError as ke:
             print("No new listings!")
-            return
+    return rental_df
