@@ -73,3 +73,6 @@ class ConfigurationManager:
         :return: name of the dataset
         """
         return os.getenv('DATASET_NAME')
+
+    def get_gcs_path_for_city(self, city_name):
+        return f'rentals-data/{city_name}/'

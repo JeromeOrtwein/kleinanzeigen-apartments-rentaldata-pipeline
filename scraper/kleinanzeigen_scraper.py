@@ -96,8 +96,8 @@ def clean_rent_data(posting):
     # HASH ON COMPLETE DATASET TO AVOID DUPLICATES / Reposts -> set in Database to unique or filter them beforehand
     string_to_hash = plz + borough + posting_ellipsis + str(posting_price) + str(posting_qm) + str(
         posting_room_count)
-    current_hash = pbkdf2_hmac('sha256', bytes(string_to_hash, "utf-8"), b'07121993', 1)
-
+    current_hash = pbkdf2_hmac('sha256', bytes(string_to_hash, "utf-8"), b'07121993', 1).hex()
+    
     posting_entry = {}
     if filter_accept(posting_ellipsis, posting_price, price_per_qm):
         posting_entry = {"hash_code": str(current_hash),
