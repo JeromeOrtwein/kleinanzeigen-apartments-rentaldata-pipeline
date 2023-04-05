@@ -49,6 +49,7 @@ The pipeline consists of the following steps:
     2. Line Chart it used to show the trend of the rental prices over time
     3. Bar Charts are used to show the number of listings based on the borough name and to show the average size of the appartment based on the borough name
 
+
 A diagram showing the dataflow can be found here:
 
 ![Data Flow](https://user-images.githubusercontent.com/19490638/230110194-d2c9ca54-2087-49b7-bd76-4fc3ea481d12.png)
