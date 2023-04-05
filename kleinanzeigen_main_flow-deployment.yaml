@@ -1,0 +1,48 @@
+###
+### A complete description of a Prefect Deployment for flow 'kleinanzeigen-main-flow'
+###
+name: Rental Data ETL
+description: null
+version: 091c505c5c1b5fda09469190cf986ea4
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: default-agent-pool
+tags: []
+parameters:
+  city_name: stuttgart
+schedule: null
+is_schedule_active: true
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: kleinanzeigen-main-flow
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: 3e3b5bbd-8a2c-4683-8153-0f1f01b2936a
+  _block_document_name: anonymous-ecc67d7c-b806-4b61-83ec-0f15b61bd3cf
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage: null
+path: /home/benchmark_user/zoomcamp-project/kleinanzeigen-apartments-rentaldata-pipeline
+entrypoint: main.py:kleinanzeigen_main_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    city_name:
+      title: city_name
+      position: 0
+  required:
+  - city_name
+  definitions: null
+timestamp: '2023-03-30T17:21:59.027677+00:00'
