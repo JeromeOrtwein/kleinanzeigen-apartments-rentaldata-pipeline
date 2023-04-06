@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+    # Big Query Table ID: striped-harbor-375816.taxi_dataset.non_partitioned_green_tripdata
+    - name: core #Does not have to be the same as in database
+      database: rental-data-pipeline # Depends on with DWH we use, in BigQuery this refers to the Projectname
+      schema: rental_data # In Big Query this refers to the dataset
+
+      tables:
+        - name: stuttgart #Here we can define all the tables that exist in the schema or dataset
+
+models:
+  - name: fact_rental_stuttgart
+    description: >
+      The rental data of the city stuttgart - germany scraped from ebay-kleinanzeigen.de
+    columns:
+      - name: hash_code,
+      - name: post_code,
+      - name: time_stamp,
+      - name: borough,
+      - name: title,
+      - name: price,
+      - name: posting_qm,
+      - name: posting_room_count,
+      - name: price_per_qm,
+
+  - name: monthly_city_rentals_based_on_borough
+    description: >
+      Aggregated rental data for a specific city based on the borough and month
+    columns:
+      - name: borough_name
+      - name: number_of_listings
+      - name: avg_price
+      - name: avg_posting_square_meter
+      - name: avg_posting_room_count
+      - name: avg_posting_price_per_square_meter
+
+  - name: monthly_city_rentals_based_on_postcode
+    description: >
+      Aggregated rental data for a specific city based on the post_code and month
+    columns:
+      - name: post_code
+      - name: number_of_listings
+      - name: avg_price
+      - name: avg_posting_square_meter
+      - name: avg_posting_room_count
+      - name: avg_posting_price_per_square_meter
+
