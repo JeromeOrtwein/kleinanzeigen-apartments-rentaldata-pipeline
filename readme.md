@@ -87,11 +87,17 @@ The deployment was done on a locally hosted virtual machine (Running ubuntu). If
 2. Project Setup
 - The project includes a requirements.txt file. That helps installing all the required dependencies (This installs prefect as well as the python libraries required)
     - pip install -r requirements.txt
+- Install and register required prefect blocks
+    ```
+    pip install "prefect-gcp[cloud_storage]"
+    pip install 'prefect_gcp[bigquery]'
+    prefect block register -m prefect_gcp
+    ```
 - Create the needed blocks in prefect via ui or cli
-    - GCSBucket Block: Name it `rental-data-bucket` and link it to a Credentials block with the according GCS Roles  using the service accounts json file
+    - GCSBucket Block: Name it `rental-data-bucket` and link it to a Credentials block named: `gcp-rental-data-credentials` with the according GCS Roles  using the service accounts json file
         - Data Backup will be written to gcs folder rentals-data/<city_name>
     - BigQueryWarehouse Block: Name it `big-query-block` and link it to a Credentials block with the according BQ Roles using the service-account json file
-- Either use the provided 'kleinanzeigen_main_flow-deployment.yaml' file or run 
+- Run 
     `prefect deployment build ./main.py:kleinanzeigen_main_flow` and add 'city_name: stuttgart' to the parameters section
 - Use the UI or CLI to schedule the flow to your liking
 - Start the agent where you deployed the script by default its the default agent:
@@ -101,6 +107,7 @@ The deployment was done on a locally hosted virtual machine (Running ubuntu). If
     - Use the same bigquerywarehouse credentials file as in 2. or alt. create a new service account in google cloud with the same rights
 - All the needed models / schemas are placed in the dbt folder. 
     - You can just copy that into your dbt project 
+- Configure the correct GCP project name (database) in [schema.yml](dbt/models/core/schema.yml)
 - Schedule the run to your liking but try to have at least 10 minutes between the prefect and the dbt run
 
 4. Dashboard Setup

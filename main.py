@@ -54,6 +54,9 @@ def kleinanzeigen_to_local_to_gcs_to_bq(city_name):
     dataset_name = cm.get_bq_dataset_name()
     current_listings_df = kleinanzeigen_to_local(city_name)
     local_to_gcs(city_name)
+
+    # TODO: check for existing dataset on GCP BigQuery, this fails when the dataset doesn't exist.
+
     if not bqm.check_if_table_exists(dataset_name, city_name):
         bqm.create_big_query_table(dataset_name, city_name)
         if not bqm.check_if_table_exists(dataset_name, city_name):
